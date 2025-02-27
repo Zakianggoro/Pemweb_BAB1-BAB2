@@ -1,0 +1,66 @@
+public class Car {
+    private String brand;
+    private String model;
+    private int year;
+    private int speed; 
+
+    public Car() {
+        brand = "Default Brand";
+        model = "Default Model";
+        year = 0;
+        speed = 0;
+    }
+
+    public Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.speed = 0;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void displayCarInfo() {
+        System.out.println("Car: " + brand + " " + model + " (" + year + ")");
+    }
+
+    public void accelerate(int increase) {
+        speed += increase;
+        System.out.println(brand + " " + model + " berjalan dengan kecepatan " + speed + " km/jam.");
+    }
+
+    public void stop() {
+        speed = 0;
+        System.out.println(brand + " " + model + " telah berhenti.");
+    }
+
+    public void klakson() {
+        System.out.println(brand + " " + model + " berbunyi: Beep! Beep!");
+    }
+
+    public static void main(String[] args) {
+        Car car1 = new Car();
+        car1.displayCarInfo();
+        car1.accelerate(20);
+        car1.klakson();
+        car1.stop();
+
+        System.out.println();
+
+        Car car2 = new Car("Toyota", "Camry", 2023);
+        car2.displayCarInfo();
+        car2.accelerate(50);
+        car2.klakson();
+        car2.stop();
+    }
+}
