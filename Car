@@ -4,13 +4,15 @@ public class Car {
     private int year;
     private int speed; 
 
+    // Constructor 1: Default constructor (tanpa parameter)
     public Car() {
-        brand = "Default Brand";
-        model = "Default Model";
+        brand = "Unknown";
+        model = "Unknown";
         year = 0;
         speed = 0;
     }
 
+    // Constructor 2: Constructor dengan parameter
     public Car(String brand, String model, int year) {
         this.brand = brand;
         this.model = model;
@@ -18,49 +20,43 @@ public class Car {
         this.speed = 0;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
+    // Instance Method: Menampilkan informasi mobil
     public void displayCarInfo() {
         System.out.println("Car: " + brand + " " + model + " (" + year + ")");
     }
 
+    // Instance Method: Menambah kecepatan mobil
     public void accelerate(int increase) {
         speed += increase;
         System.out.println(brand + " " + model + " berjalan dengan kecepatan " + speed + " km/jam.");
     }
 
+    // Instance Method: Menghentikan mobil
     public void stop() {
         speed = 0;
         System.out.println(brand + " " + model + " telah berhenti.");
     }
 
-    public void klakson() {
+    // Instance Method: Membunyikan klakson
+    public void honk() {
         System.out.println(brand + " " + model + " berbunyi: Beep! Beep!");
     }
 
     public static void main(String[] args) {
+        // Membuat objek car1 menggunakan constructor default
         Car car1 = new Car();
         car1.displayCarInfo();
-        car1.accelerate(20);
-        car1.klakson();
+        car1.accelerate(30);
+        car1.honk();
         car1.stop();
 
         System.out.println();
 
+        // Membuat objek car2 menggunakan constructor dengan parameter
         Car car2 = new Car("Toyota", "Camry", 2023);
         car2.displayCarInfo();
-        car2.accelerate(50);
-        car2.klakson();
+        car2.accelerate(60);
+        car2.honk();
         car2.stop();
     }
 }
